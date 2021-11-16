@@ -110,3 +110,17 @@ ref.printItem()
 
 ref.publisher = `Ron Whisley`
 console.log(ref.publisher);
+
+class Encyclopedia extends ReferenceItem {
+    constructor(public title: string, protected year: number, public edition: number) {
+        super(title, year);
+    }
+
+    printItem(): void {
+        super.printItem()
+        console.log(`Edition: ${this.edition}, ${this.year}`)
+    }
+}
+
+let refBook: Encyclopedia = new Encyclopedia(`JavaScript for Dummies`, 1998, 8)
+refBook.printItem()

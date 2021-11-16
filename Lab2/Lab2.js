@@ -1,3 +1,18 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Category;
 (function (Category) {
     Category["BA"] = "Business Analyst";
@@ -75,3 +90,20 @@ var ref = new ReferenceItem("Harry Potter", 1942);
 ref.printItem();
 ref.publisher = "Ron Whisley";
 console.log(ref.publisher);
+var Encyclopedia = /** @class */ (function (_super) {
+    __extends(Encyclopedia, _super);
+    function Encyclopedia(title, year, edition) {
+        var _this = _super.call(this, title, year) || this;
+        _this.title = title;
+        _this.year = year;
+        _this.edition = edition;
+        return _this;
+    }
+    Encyclopedia.prototype.printItem = function () {
+        _super.prototype.printItem.call(this);
+        console.log("Edition: " + this.edition + ", " + this.year);
+    };
+    return Encyclopedia;
+}(ReferenceItem));
+var refBook = new Encyclopedia("JavaScript for Dummies", 1998, 8);
+refBook.printItem();
