@@ -86,10 +86,11 @@ var ReferenceItem = /** @class */ (function () {
     };
     return ReferenceItem;
 }());
-var ref = new ReferenceItem("Harry Potter", 1942);
-ref.printItem();
-ref.publisher = "Ron Whisley";
-console.log(ref.publisher);
+/*let ref: ReferenceItem = new ReferenceItem(`Harry Potter`, 1942)
+ref.printItem()
+
+ref.publisher = `Ron Whisley`
+console.log(ref.publisher);*/
 var Encyclopedia = /** @class */ (function (_super) {
     __extends(Encyclopedia, _super);
     function Encyclopedia(title, year, edition) {
@@ -103,7 +104,11 @@ var Encyclopedia = /** @class */ (function (_super) {
         _super.prototype.printItem.call(this);
         console.log("Edition: " + this.edition + ", " + this.year);
     };
+    Encyclopedia.prototype.printCitation = function () {
+        console.log(this.title + " " + this.year);
+    };
     return Encyclopedia;
 }(ReferenceItem));
 var refBook = new Encyclopedia("JavaScript for Dummies", 1998, 8);
 refBook.printItem();
+refBook.printCitation();

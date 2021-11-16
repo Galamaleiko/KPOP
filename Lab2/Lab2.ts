@@ -79,7 +79,7 @@ let favouriteLibrarian: Librarian = new UniversityLibrarian();
 favouriteLibrarian.name = "John"
 favouriteLibrarian.assistCustomer("Dohn")
 
-class ReferenceItem {
+abstract class ReferenceItem {
     /*title: string
     year: number
     constructor(newTitle: string, newYear: number) {
@@ -100,16 +100,18 @@ class ReferenceItem {
         this._publisher = newPublisher;
     }
 
+    abstract printCitation(): void
+
     printItem(): void {
         console.log(`${this.title} was published in ${this.year} by ${this.department} department`);
     }
 }
 
-let ref: ReferenceItem = new ReferenceItem(`Harry Potter`, 1942)
+/*let ref: ReferenceItem = new ReferenceItem(`Harry Potter`, 1942)
 ref.printItem()
 
 ref.publisher = `Ron Whisley`
-console.log(ref.publisher);
+console.log(ref.publisher);*/
 
 class Encyclopedia extends ReferenceItem {
     constructor(public title: string, protected year: number, public edition: number) {
@@ -120,7 +122,14 @@ class Encyclopedia extends ReferenceItem {
         super.printItem()
         console.log(`Edition: ${this.edition}, ${this.year}`)
     }
+
+    printCitation(): void {
+        console.log(this.title + ` ` + this.year);
+
+    }
+
 }
 
 let refBook: Encyclopedia = new Encyclopedia(`JavaScript for Dummies`, 1998, 8)
 refBook.printItem()
+refBook.printCitation()
