@@ -1,0 +1,22 @@
+.blueTitle {
+    color: rgb(36, 112, 233);
+    font-size: larger;
+    font-weight: bold;
+}
+table {
+    background-color: rgb(209, 204, 204);
+}
+.idk {
+    width: 20%;
+}
+.error {
+    text-align: left;
+    padding-left: 20px;
+}
+.btn-group {
+    padding-left: 0%;
+}
+.sendBtn {
+    background-color: black;
+    color: white;
+}
