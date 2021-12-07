@@ -1,0 +1,104 @@
+<table width="100%">
+    <tr class="blueTitle">
+        Информация об организации
+    </tr>
+    <p></p>
+    <tr>
+        <td class="idk">
+            Наименование*
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="data.orgName">
+            <label *ngIf="!(orgNameError==='')" class="error">{{orgNameError}}</label>
+        </td>
+    </tr>
+    <p></p>
+    <tr>
+        <td class="idk">
+            Город*
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="data.orgCity">
+            <label *ngIf="!(orgCityError==='')" class="error">{{orgCityError}}</label>
+        </td>
+    </tr>
+    <p></p>
+    <tr>
+        <td class="idk">
+            Адрес*
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="data.orgAddress">
+            <label *ngIf="!(orgAddressError==='')" class="error">{{orgAddressError}}</label>
+        </td>
+    </tr>
+    <p></p>
+    <tr class="blueTitle">
+        Контактное лицо
+    </tr>
+    <p></p>
+    <tr>
+        <td class="idk">
+            Контактное лицо*
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="data.person">
+            <label *ngIf="!(personError==='')" class="error">{{personError}}</label>
+        </td>
+    </tr>
+    <p></p>
+    <tr>
+        <td class="idk">
+            Телефон*
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="data.phone">
+            <label *ngIf="!(phoneError==='')" class="error">{{phoneError}}</label>
+        </td>
+    </tr>
+    <p></p>
+    <tr>
+        <td class="idk">
+            E-Mail*
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="data.email">
+            <label *ngIf="!(emailError==='')" class="error">{{emailError}}</label>
+        </td>
+    </tr>
+    <p></p>
+    <tr class="blueTitle">
+        Контактное лицо
+    </tr>
+    <p></p>
+
+    <tr>
+        <td class="idk">
+            Название*
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="data.objName">
+            <label *ngIf="!(objNameError==='')" class="error">{{objNameError}}</label>
+        </td>
+    </tr>
+    <p></p>
+    <tr>
+        <td class="idk">
+            Область применения ПТО*
+        </td>
+        <td>
+            <div class="btn-group" style="width:100%">
+                <button style="width:11.1%">Отопление</button>
+                <button style="width:11.1%">Вентиляция</button>
+                <button style="width:11.1%">Гвс</button>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="idk"></td>
+        <td>
+            <input type="button" value="Отправить" (click)="checkData()" class="sendBtn">
+        </td>
+    </tr>
+
+</table>
