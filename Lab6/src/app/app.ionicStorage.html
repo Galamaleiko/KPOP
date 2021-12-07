@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <th>Name </th>
+        <th>Surname </th>
+        <th>Birth Date </th>
+        <th>City </th>
+        <th>Postcode </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let element of users">
+            <td>-={{element.name.first}}=-</td>
+            <td>-={{element.name.last}}=-</td>
+            <td>-={{element.dob.date}}=-</td>
+            <td>-={{element.location.city}}=-</td>
+            <td>-={{element.location.postcode}}=-</td>
+        </tr>
+    </tbody>
+</table>
