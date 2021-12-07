@@ -8,7 +8,7 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 export class ChildComponent {
 
     sum: number = 0;
-    procText: string = "";
+
     @Input() price: number = 0;
 
     add(): void {
